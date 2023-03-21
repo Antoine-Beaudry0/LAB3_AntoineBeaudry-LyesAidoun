@@ -2681,8 +2681,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433452090}
-  m_LocalRotation: {x: 0.08860373, y: 0.040712062, z: 0.0036199945, w: -0.995228}
-  m_LocalPosition: {x: 36.906666, y: 72.30594, z: -232.0827}
+  m_LocalRotation: {x: -0.10507042, y: 0.023482801, z: 0.0024866082, w: 0.99418443}
+  m_LocalPosition: {x: 27.587772, y: 66.37546, z: -199.19861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8652,6 +8652,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 379e57ee261e807479f7748518b5346d, type: 3}
   m_PrefabInstance: {fileID: 1394392390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1414845044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1414845045}
+  m_Layer: 0
+  m_Name: GestionJeu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1414845045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414845044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.346522, y: 0.84317464, z: -27.166557}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1452849327
 PrefabInstance:
   m_ObjectHideFlags: 0
