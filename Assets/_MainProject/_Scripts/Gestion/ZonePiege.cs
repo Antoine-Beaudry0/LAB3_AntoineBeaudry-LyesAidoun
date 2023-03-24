@@ -26,13 +26,17 @@ public class ZonePiege : MonoBehaviour
      * Méthode qui est appelée quand un object entre dans la zone
      */
     private void OnTriggerEnter(Collider other)
-    {
+    {  
         if (other.gameObject.tag == "Player" && !_estActive)  // Si c'est le joueur qui est entré dans la zone et qu'elle n'a pas été activée
         {
+                
             // Pour chacun des RB dans la liste j'active leur gravité
             // et leur applique une force vers le bas
             foreach (var rb in _listeRb)
             {
+                Debug.Log("une roue t es tombé sur la tete !! "); 
+                Debug.Log("trouve le levier pour te sauver !  ");
+
                 rb.useGravity = true;  //active la gravité sur le rigidbody
                 Vector3 direction = new Vector3(0f, -1f, 0f); // Établi la direction de la force
                 rb.AddForce(direction * _intensiteForce); // Applique la force sur le rigidbody
