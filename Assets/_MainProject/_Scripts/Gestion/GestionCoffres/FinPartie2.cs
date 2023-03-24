@@ -22,7 +22,7 @@ public class FinPartie2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !_finPartie)
         {
-            if (ComptageCoffres.totalChestCount == 6)
+            if (ComptageCoffres.totalChestCount == 7)
             {
                 Debug.Log("ok");
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
@@ -46,7 +46,7 @@ public class FinPartie2 : MonoBehaviour
             }
             else
             {
-                int coffresManquants = 6 - ComptageCoffres.totalChestCount;
+                int coffresManquants = 7 - ComptageCoffres.totalChestCount;
                 Debug.Log("Il manque " + coffresManquants + " coffres pour terminer le jeu");
             }
         }
