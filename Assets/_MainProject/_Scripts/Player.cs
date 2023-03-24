@@ -24,7 +24,17 @@ public class Player : MonoBehaviour
 
         Vector3 direction = new Vector3(positionX, 0f, positionZ);
         direction.Normalize();
-        _rb.velocity=direction * Time.fixedDeltaTime * _vitesse;
+
+        //Appliquer la rotation du personnage dans la direction de son déplacement
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
+
+
+
+
+        _rb.velocity = direction * Time.fixedDeltaTime * _vitesse;
     }
 
     // Update is called once per frame
