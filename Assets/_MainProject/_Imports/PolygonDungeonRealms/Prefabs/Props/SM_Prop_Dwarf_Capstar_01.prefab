@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8297424328645680914}
   - component: {fileID: 2503543899957463875}
   - component: {fileID: 6852941992132251383}
+  - component: {fileID: 7985276104891008958}
   m_Layer: 0
   m_Name: SM_Prop_Dwarf_Capstar_01_1
   m_TagString: Untagged
@@ -64,8 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a12d3fc0532ba64e972160db18dfd99, type: 2}
-  - {fileID: 2100000, guid: 2a12d3fc0532ba64e972160db18dfd99, type: 2}
+  - {fileID: 2100000, guid: 03983b86a7eaff84ba056287fd7b4e44, type: 2}
+  - {fileID: 2100000, guid: 03983b86a7eaff84ba056287fd7b4e44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,6 +126,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.7590163, y: 0.25323975, z: 0.088219926}
   m_Center: {x: 0, y: 0.8348174, z: -0.012472673}
+--- !u!114 &7985276104891008958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133333510845020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eea7be6be90d6443a215c1ee9e45227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1924771394103764
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +150,8 @@ GameObject:
   - component: {fileID: 33434651616711116}
   - component: {fileID: 23713584100091894}
   - component: {fileID: 64828540714032484}
+  - component: {fileID: 2410473096916316540}
+  - component: {fileID: 9151680669413214935}
   m_Layer: 0
   m_Name: SM_Prop_Dwarf_Capstar_01
   m_TagString: Untagged
@@ -188,8 +203,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2a12d3fc0532ba64e972160db18dfd99, type: 2}
-  - {fileID: 2100000, guid: 2a12d3fc0532ba64e972160db18dfd99, type: 2}
+  - {fileID: 2100000, guid: 03983b86a7eaff84ba056287fd7b4e44, type: 2}
+  - {fileID: 2100000, guid: 03983b86a7eaff84ba056287fd7b4e44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,8 +235,33 @@ MeshCollider:
   m_GameObject: {fileID: 1924771394103764}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43566311733350662, guid: 4bb4a4d31d6f3674abc5635942a138d3, type: 2}
+--- !u!65 &2410473096916316540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924771394103764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0907642, y: 0.79194456, z: 1.0907642}
+  m_Center: {x: -0, y: 0.35261434, z: -0}
+--- !u!114 &9151680669413214935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924771394103764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eea7be6be90d6443a215c1ee9e45227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

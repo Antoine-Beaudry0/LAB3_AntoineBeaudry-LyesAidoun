@@ -5,17 +5,19 @@ using UnityEngine;
 public class ZonePiege2 : MonoBehaviour
 {// ***** Atributs *****
 
-    private bool _estActive = false;  // booléen qui permet de valider si la zone piège a été activée
-    [SerializeField] private List<GameObject> _listePieges = new List<GameObject>();  // Liste de gameObjects qui contient tous les gameObjects à déclencher
-    private List<Rigidbody> _listeRb = new List<Rigidbody>(); // Liste de rigidbody qui va contenir tous les rigidbody des gameObjects de la liste précédente
-    [SerializeField] private float _intensiteForce = 200;  // Intensité de la force à appliquer sur les gameObjects
+    private bool _estActive = false; 
 
-    // ***** Méthode privées ****
+    [SerializeField] private List<GameObject> _listePieges = new List<GameObject>();  
+
+    private List<Rigidbody> _listeRb = new List<Rigidbody>(); 
+    
+    [SerializeField] private float _intensiteForce = 200; 
+
+    // ***** Mï¿½thode privï¿½es ****
 
     private void Awake()
     {
-        // Pour chacun des gameObjects définis je récupère son rigidbory
-        // et l'ajoute à la liste contenant ceux-ci
+
         foreach (var piege in _listePieges)
         {
             _listeRb.Add(piege.GetComponent<Rigidbody>());
@@ -23,7 +25,7 @@ public class ZonePiege2 : MonoBehaviour
     }
 
     /*
-     * Méthode qui est appelée quand un object entre dans la zone
+     * Mï¿½thode qui est appelï¿½e quand un object entre dans la zone
      */
     private void OnTriggerEnter(Collider other)
     {
@@ -32,11 +34,11 @@ public class ZonePiege2 : MonoBehaviour
            
             foreach (var rb in _listeRb)
             {
-                rb.useGravity = true;  //active la gravité sur le rigidbody
-                Vector3 direction = new Vector3(0f, -1f, 0f); // Établi la direction de la force
-                rb.AddForce(direction * _intensiteForce); // Applique la force sur le rigidbody
+                rb.useGravity = true; 
+                Vector3 direction = new Vector3(0f, -1f, 0f); 
+                rb.AddForce(direction * _intensiteForce); 
             }
-            _estActive = true;  // Marque la zone comme activée
+            _estActive = true;  
         }
     }
 }
