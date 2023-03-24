@@ -17,18 +17,19 @@ public class FinPartie : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+
+
         if (collision.gameObject.tag == "Player" && !_finPartie)
         {
+            Debug.Log("ok");
             gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
             _finPartie = true;
 
             int noScene = SceneManager.GetActiveScene().buildIndex;
-            if (noScene == 1)
+            if (noScene == 2)
             {
                 int accrochages = _gestionJeu.GetPointage();
                 Debug.Log("Fin de partie");
-
-                
             }
 
             else

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleRotationNiv3 : MonoBehaviour
 {
 
-    [SerializeField] private float _rotationSpeedY = 0.5f;
+    [SerializeField] private float _rotationSpeedY = 0.01f;
 
     
     void Update()

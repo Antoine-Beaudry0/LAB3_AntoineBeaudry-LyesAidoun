@@ -17,6 +17,6 @@ public class VaEtViens : MonoBehaviour
     
     void Update()
     {
-        transform.position = new Vector3(Mathf.PingPong(Time.time * 100, max - min) + min, transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.PingPong(Time.time * 30, max - min) + min, transform.position.y, transform.position.z);
     }
 }

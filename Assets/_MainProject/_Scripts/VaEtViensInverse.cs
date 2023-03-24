@@ -17,7 +17,7 @@ public class VaEtViensInverse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float pingPongValue = Mathf.PingPong(Time.time * 100, max - min) + min;
+        float pingPongValue = Mathf.PingPong(Time.time * 30, max - min) + min;
         float newXPos = (2f * max) - pingPongValue;
         transform.position = new Vector3(newXPos, transform.position.y, transform.position.z);
     }
