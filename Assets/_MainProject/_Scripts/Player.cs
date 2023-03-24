@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
         Vector3 direction = new Vector3(positionX, 0f, positionZ);
         direction.Normalize();
-        _rb.AddForce(direction * Time.fixedDeltaTime * _vitesse);
+        _rb.velocity=direction * Time.fixedDeltaTime * _vitesse;
     }
 
     // Update is called once per frame
