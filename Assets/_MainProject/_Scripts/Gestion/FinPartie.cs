@@ -27,6 +27,8 @@ public class FinPartie : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
             _finPartie = true;
 
+            _player.Arret();
+
             int noScene = SceneManager.GetActiveScene().buildIndex;
             if (noScene == 2)
             {
