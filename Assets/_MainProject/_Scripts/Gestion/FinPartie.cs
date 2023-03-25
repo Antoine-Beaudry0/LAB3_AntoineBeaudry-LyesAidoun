@@ -87,7 +87,6 @@ public class FinPartie : MonoBehaviour
         if (!_finPartie && Input.anyKeyDown)
         {
             _gestionJeu.StartTimer();
-            Debug.Log("Chronomètre démarré");
         }
     }
 }

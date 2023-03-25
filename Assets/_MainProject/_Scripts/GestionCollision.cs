@@ -7,6 +7,7 @@ public class GestionCollision : MonoBehaviour
 
     private GestionJeu _gestionJeu;
     private Collider _collider;
+    private bool _touche = false;
 
     private void Start()
     {
@@ -16,14 +17,17 @@ public class GestionCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-        _gestionJeu.AugmenterPointage();
-        _collider.enabled = false;
-        StartCoroutine(ReactiverCollision());
+        if (_touche == false)
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            _gestionJeu.AugmenterPointage();
 
-        Debug.Log("Vous avez heurté un obstacle!");
+            StartCoroutine(ReactiverCollision());
 
-        StartCoroutine(EffacerMessageConsole());
+            Debug.Log("Vous avez heurté un obstacle!");
+
+            StartCoroutine(EffacerMessageConsole());
+        }
     }
     IEnumerator EffacerMessageConsole()
     {
