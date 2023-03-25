@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _vitesse = 500.0f;
     private Rigidbody _rb;
     bool jouer;
+    private bool _aDejaBouge;
 
 
     // Start is called before the first frame update
@@ -23,7 +24,11 @@ public class Player : MonoBehaviour
     {
         if (jouer == true)
         {
-
+            if (!_aDejaBouge && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.Space)))
+            {
+                _aDejaBouge = true;
+                FindObjectOfType<GestionJeu>().Debuter();
+            }
 
             float positionX = Input.GetAxis("Horizontal");
             float positionZ = Input.GetAxis("Vertical");
@@ -42,8 +47,11 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
+
+
     public void Arret()
     {
-        jouer= false;
+        jouer = false;
     }
+
 }

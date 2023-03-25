@@ -10,6 +10,7 @@ public class FinPartie : MonoBehaviour
     private Player _player;
     private GestionJeu _pointage;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,20 +32,20 @@ public class FinPartie : MonoBehaviour
             int noScene = SceneManager.GetActiveScene().buildIndex;
             if (noScene == 2)
             {
-                int accrochages = _gestionJeu.GetPointage();
-                int _accrochagesNiv1 = _gestionJeu.GetAccrochagesNiv1();
-                float _tempsNiv1 = _gestionJeu.GetTempsNiv1();
-                int _accrochagesNiv2 = _gestionJeu.GetAccrochagesNiv2();
-                float _tempsNiv2 = _gestionJeu.GetTempsNiv2();
-                int _accrochagesNiv3 = accrochages - (_accrochagesNiv1 + _accrochagesNiv2);
-                float _tempsNiv3 = Time.time - (_tempsNiv1 + _tempsNiv2);
+                int     accrochages         = _gestionJeu.GetPointage();
+                int     _accrochagesNiv1    = _gestionJeu.GetAccrochagesNiv1();
+                float   _tempsNiv1          = _gestionJeu.GetTempsNiv1();
+                int     _accrochagesNiv2    = _gestionJeu.GetAccrochagesNiv2();
+                float   _tempsNiv2          = _gestionJeu.GetTempsNiv2();
+                int     _accrochagesNiv3    = accrochages - (_accrochagesNiv1 + _accrochagesNiv2);
+                float   _tempsNiv3          = Time.time - (_tempsNiv1 + _tempsNiv2);
 
 
                 float _tempsTolNiv1 = _accrochagesNiv1 + _tempsNiv1;
                 float _tempsTolNiv2 = _accrochagesNiv2 + _tempsNiv2;
                 float _tempsTolNiv3 = _accrochagesNiv3 + _tempsNiv3;
 
-                float _tempTotal = _tempsTolNiv1 + _tempsTolNiv2 + _tempsTolNiv3;
+                
 
                 Debug.Log("Fin de partie");
 
@@ -60,9 +61,9 @@ public class FinPartie : MonoBehaviour
                 Debug.Log("Temps Niveau 3 = " + _tempsNiv3);
                 Debug.Log("Temps total Niveau 3 = " + _tempsTolNiv3.ToString("f2"));
 
-
-
                 Debug.Log("Au total, vous avez touché " + _pointage.GetPointage() + " obstacles");
+
+                float _tempTotal = _tempsTolNiv1 + _tempsTolNiv2 + _tempsTolNiv3;
                 Debug.Log("Temps total du jeu = " + _tempTotal + " secondes");
 
             }
@@ -83,6 +84,10 @@ public class FinPartie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!_finPartie && Input.anyKeyDown)
+        {
+            _gestionJeu.StartTimer();
+            Debug.Log("Chronomètre démarré");
+        }
     }
 }

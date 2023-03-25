@@ -9,6 +9,11 @@ public class GestionJeu : MonoBehaviour
     private int _accrochageNiveau2 = 0;
     private float _tempsNiveau1 = 0.0f;  // Attribut qui conserve le temps pour le niveau 1
     private float _tempsNiveau2 = 0.0f;
+    private bool _timerStarted;
+    private float _startTime;
+    private bool _aDebute;
+    private object _gestionJeu;
+    private bool _enMouvement;
 
     // ***** Méthodes privées *****
     private void Awake()
@@ -89,5 +94,19 @@ public class GestionJeu : MonoBehaviour
     {
         _accrochageNiveau2 = accrochages - _accrochageNiveau1;
         _tempsNiveau2 = tempsNiv2 - _tempsNiveau1;
+    }
+    public void StartTimer()
+    {
+        _timerStarted = true;
+        _startTime = Time.time;
+    }
+    public void Debuter()
+    {
+        if (!_aDebute)
+        {
+            _aDebute = true;
+            StartTimer();
+        }
+        _enMouvement = true;
     }
 }
