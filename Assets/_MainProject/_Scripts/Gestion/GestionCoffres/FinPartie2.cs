@@ -31,7 +31,7 @@ public class FinPartie2 : MonoBehaviour
                 _player.Arret();
 
                 int noScene = SceneManager.GetActiveScene().buildIndex;
-                if (noScene == 2)
+                if (noScene == 3)
                 {
                     int accrochages = _gestionJeu.GetPointage();
                     Debug.Log("Fin de partie");

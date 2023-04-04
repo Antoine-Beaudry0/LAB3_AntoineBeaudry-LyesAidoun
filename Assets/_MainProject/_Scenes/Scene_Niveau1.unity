@@ -2904,6 +2904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433452092}
   - component: {fileID: 433452091}
+  - component: {fileID: 433452093}
   m_Layer: 0
   m_Name: Water4AdvancedReflectionMain Camera
   m_TagString: Untagged
@@ -2961,14 +2962,23 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433452090}
-  m_LocalRotation: {x: -0.31273735, y: 0.51681787, z: 0.21027319, w: 0.76868707}
-  m_LocalPosition: {x: 31.26027, y: 69.823296, z: -215.65204}
+  m_LocalRotation: {x: -0.044978913, y: 0.016480967, z: 0.000730647, w: 0.9988517}
+  m_LocalPosition: {x: 928.2125, y: -752.79156, z: -1283.0592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 658475087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &433452093
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433452090}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &434236007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 165010, guid: 5b24c4e9a73f5eb4cbebd5c5e610623f, type: 3}
@@ -5526,6 +5536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4338cddc08b77a846a17f08afd07a73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _txtAccrochages: {fileID: 1623192101244949654}
+  _txtTemps: {fileID: 1623192101244949653}
   _menuPause: {fileID: 1158835845}
 --- !u!1 &690671618 stripped
 GameObject:
@@ -13953,8 +13965,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803880537}
-  m_LocalRotation: {x: -0.1736482, y: -0, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: 35.518097, y: 70.90963, z: -220.26564}
+  m_LocalRotation: {x: 0.12262299, y: 0.03274918, z: 0.004060178, w: -0.99190456}
+  m_LocalPosition: {x: 822.7204, y: -909.00653, z: -2906.8682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17223,6 +17235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1457695691524278640, guid: 5f34372ec3faf104f8e0cce02bd12439, type: 3}
+      propertyPath: _menuPause
+      value: 
+      objectReference: {fileID: 1158835845}
     - target: {fileID: 5658018159074026779, guid: 5f34372ec3faf104f8e0cce02bd12439, type: 3}
       propertyPath: m_Name
       value: UIjeu
@@ -17233,3 +17249,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f34372ec3faf104f8e0cce02bd12439, type: 3}
+--- !u!114 &1623192101244949653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8521403891389842866, guid: 5f34372ec3faf104f8e0cce02bd12439, type: 3}
+  m_PrefabInstance: {fileID: 1623192101244949652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1623192101244949654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5083033411639029968, guid: 5f34372ec3faf104f8e0cce02bd12439, type: 3}
+  m_PrefabInstance: {fileID: 1623192101244949652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

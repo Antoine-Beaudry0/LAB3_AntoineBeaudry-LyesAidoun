@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GestionJeu : MonoBehaviour
 {
@@ -7,18 +10,22 @@ public class GestionJeu : MonoBehaviour
     private int _pointage = 0;  // Attribut qui conserve le nombre d'accrochages
     private int _accrochageNiveau1 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 1
     private int _accrochageNiveau2 = 0;
+
     private float _tempsNiveau1 = 0.0f;  // Attribut qui conserve le temps pour le niveau 1
     private float _tempsNiveau2 = 0.0f;
     private float _startTime;
+    private float _tempsFinal = 0;
+    private float _tempsDepart = 0;
+
     private bool _aDebute;
     private object _gestionJeu;
 
-    // ***** Méthodes privées *****
+    // ***** Mï¿½thodes privï¿½es *****
     private void Awake()
     {
-        // Vérifie si un gameObject GestionJeu est déjà présent sur la scène si oui
-        // on détruit celui qui vient d'être ajouté. Sinon on le conserve pour le 
-        // scène suivante.
+        // Vï¿½rifie si un gameObject GestionJeu est dï¿½jï¿½ prï¿½sent sur la scï¿½ne si oui
+        // on dï¿½truit celui qui vient d'ï¿½tre ajoutï¿½. Sinon on le conserve pour le 
+        // scï¿½ne suivante.
         int nbGestionJeu = FindObjectsOfType<GestionJeu>().Length;
         if (nbGestionJeu > 1)
         {
@@ -32,23 +39,31 @@ public class GestionJeu : MonoBehaviour
 
     private void Start()
     {
-        InstructionsDepart();  // Affiche les instructions de départ
-    }
+        InstructionsDepart();  // Affiche les instructions de dï¿½part
+        _tempsDepart = Time.time;
 
+    }
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     /*
-     * Méthode qui affiche les instructions au départ
+     * Mï¿½thode qui affiche les instructions au dï¿½part
      */
     private static void InstructionsDepart()
     {
-        Debug.Log("*** Course à obstacles");
-        Debug.Log("Le but du jeu est d'atteindre la zone d'arrivée le plus rapidement possible");
-        Debug.Log("Chaque contact avec un obstable entraînera une pénalité");
+        Debug.Log("*** Course ï¿½ obstacles");
+        Debug.Log("Le but du jeu est d'atteindre la zone d'arrivï¿½e le plus rapidement possible");
+        Debug.Log("Chaque contact avec un obstable entraï¿½nera une pï¿½nalitï¿½");
     }
 
-    // ***** Méthodes publiques ******
+    // ***** Mï¿½thodes publiques ******
 
     /*
-     * Méthode publique qui permet d'augmenter le pointage de 1
+     * Mï¿½thode publique qui permet d'augmenter le pointage de 1
      */
     public void AugmenterPointage()
     {
@@ -82,7 +97,7 @@ public class GestionJeu : MonoBehaviour
         return _accrochageNiveau2;
     }
 
-    // Méthode qui reçoit les valeurs pour le niveau 1 et qui modifie les attributs respectifs
+    // Mï¿½thode qui reï¿½oit les valeurs pour le niveau 1 et qui modifie les attributs respectifs
     public void SetNiveau1(int accrochages, float tempsNiv1)
     {
         _accrochageNiveau1 = accrochages;
@@ -104,5 +119,34 @@ public class GestionJeu : MonoBehaviour
             _aDebute = true;
             StartTimer();
         }
+    }
+
+
+    /*---------------LAB 3 UI--------------*/
+
+    public void AugmenterPointageUi()
+    {
+        _pointage++;
+        UIManager uiManager = FindObjectOfType<UIManager>();
+        uiManager.ChangerPointage(_pointage);
+    }
+
+    // Retourne le temps 
+    public float GetTempsDepart()
+    {
+        return _tempsDepart;
+    }
+
+    // Set le temps final
+
+    public void SetTempsFinal(float p_tempFinal)
+    {
+        _tempsFinal = p_tempFinal - _tempsDepart;
+    // Retourne le temps 
+    }
+
+    public float GetTempsFinal()
+    {
+        return _tempsFinal;
     }
 }
