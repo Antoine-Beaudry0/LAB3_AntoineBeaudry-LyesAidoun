@@ -30,8 +30,9 @@ public class FinPartie : MonoBehaviour
             _player.Arret();
 
             int noScene = SceneManager.GetActiveScene().buildIndex;
-            if (noScene == 2)
+            if (noScene == 3)
             {
+                /*
                 int     accrochages         = _gestionJeu.GetPointage();
                 int     _accrochagesNiv1    = _gestionJeu.GetAccrochagesNiv1();
                 float   _tempsNiv1          = _gestionJeu.GetTempsNiv1();
@@ -61,19 +62,20 @@ public class FinPartie : MonoBehaviour
                 Debug.Log("Temps Niveau 3 = " + _tempsNiv3);
                 Debug.Log("Temps total Niveau 3 = " + _tempsTolNiv3.ToString("f2"));
 
-                Debug.Log("Au total, vous avez touché " + _pointage.GetPointage() + " obstacles");
+                Debug.Log("Au total, vous avez touchï¿½ " + _pointage.GetPointage() + " obstacles");
 
                 float _tempTotal = _tempsTolNiv1 + _tempsTolNiv2 + _tempsTolNiv3;
-                Debug.Log("Temps total du jeu = " + _tempTotal + " secondes");
+                Debug.Log("Temps total du jeu = " + _tempTotal + " secondes");*/    
+                SceneManager.LoadScene(noScene + 1);
 
             }
 
-            else if (noScene == 0)
+            else if (noScene == 1)
             {
                 _gestionJeu.SetNiveau1(_gestionJeu.GetPointage(), Time.time);
                 SceneManager.LoadScene(noScene + 1);
             }
-            else if (noScene == 1)
+            else if (noScene == 2)
             {
 
                 SceneManager.LoadScene(noScene + 1);

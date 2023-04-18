@@ -19,12 +19,12 @@ public class GestionCollision : MonoBehaviour
     {
         if (_touche == false)
         {
+            _gestionJeu.AugmenterPointageUi();
             gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-            _gestionJeu.AugmenterPointage();
 
             StartCoroutine(ReactiverCollision());
 
-            Debug.Log("Vous avez heurté un obstacle!");
+            Debug.Log("Vous avez heurtï¿½ un obstacle!");
 
             StartCoroutine(EffacerMessageConsole());
         }
